@@ -1,0 +1,81 @@
+<!DOCTYPE html>: This declaration defines the document type and version of HTML being used, which is HTML5.
+
+<html lang="en">: The opening HTML tag with a "lang" attribute that specifies the document's language as English.
+
+<head>: This opening tag begins the head section of the HTML document, where metadata and document-related information are typically placed.
+
+<meta charset="UTF-8">: This meta tag specifies the character encoding of the document as UTF-8, which includes characters from a wide range of languages.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: This meta tag sets the viewport properties for responsive web design, ensuring that the webpage adjusts properly on various devices.
+
+<title>Student Details</title>: This line sets the title of the web page, which appears in the browser's title bar or tab.
+
+</head>: Closes the head section of the HTML document.
+
+<body>: Opens the body section, where the visible content of the web page is placed.
+
+<h1>Student Details</h1>: Creates a level 1 header displaying the main heading "Student Details" at the top of the web page.
+
+<form id="studentForm">: Initiates a form element with the unique identifier "studentForm" for capturing student details.
+
+<label for="studentNumber">Student Number:</label>: Creates a label for the "Student Number" input field. The "for" attribute associates this label with the input field that has the "id" attribute "studentNumber."<input type="text" id="studentNumber" required><br><br>: This line creates an input field for entering the student number. The "id" attribute "studentNumber" is used for JavaScript access, and the "required" attribute ensures that the field must be filled out before submitting the form.
+
+<!-- Repeat similar lines for Name, Age, and Marks input fields -->: This comment indicates that similar lines of code should be repeated for capturing the student's name, age, and marks. It's a placeholder for those input fields.
+
+<button type="button" onclick="addStudent()">Add Student</button>: This button element has a "type" attribute set to "button" and an "onclick" attribute that calls the JavaScript function "addStudent()" when the button is clicked.
+
+</form>: Closes the form element, encompassing the input fields and the "Add Student" button.
+
+<h2>Student List:</h2>: Creates a level 2 header displaying the text "Student List:" as a subheading.
+
+<ul id="studentList"></ul>: Initiates an empty unordered list (<ul>) element with the "id" attribute "studentList." This is where the list of students will be displayed.
+
+<script>: Starts a script element, indicating that JavaScript code follows.
+
+let students = [];: Declares a JavaScript variable "students" as an empty array to store student objects.
+
+function addStudent() {: Defines a JavaScript function named "addStudent()" to add a student to the "students" array.
+
+// Get input values from the form: A comment explaining that the following lines of code retrieve values entered in the form fields.
+
+const studentNumber = document.getElementById("studentNumber").
+
+value;: Retrieves the value entered in the "studentNumber" input field using the getElementById method and stores it in the variable "studentNumber.
+
+"// Create a student object: A comment indicating the intention to create a JavaScript object to represent a student.
+
+const student = { ... };: Defines a student object with properties such as "studentNumber," "studentName," "studentAge," and "studentMarks."
+
+students.push(student);: Adds the "student" object to the "students" array.
+
+// Display the updated list of students: A comment specifying that the list of students should be displayed.
+
+displayStudents();: Calls the "displayStudents()" function to update and display the list of students on the web page.
+
+// Reset the form: A comment indicating that the form should be reset after adding a student.
+
+resetForm();: Calls the "resetForm()" function to clear the input fields and reset the form after adding a student.
+
+function displayStudents() {: Defines a JavaScript function named "displayStudents()" to display the list of students on the web page.
+
+const studentList = document.getElementById("studentList");: Retrieves the "studentList" element using its "id" attribute and stores it in the variable "studentList."
+
+studentList.innerHTML = "";: Clears the contents of the "studentList" element.students.forEach((student, index) => {: Initiates a loop that iterates through each student object in the "students" array.
+
+// Create a list item for each student: A comment indicating the intention to create a list item for each student.
+
+const listItem = document.createElement("li");: Dynamically creates a new list item (<li>) element for each student.
+
+listItem.innerHTML = ...;: Populates the newly created list item with HTML content representing the student's details using template literals.
+
+studentList.appendChild(listItem);: Appends the newly created list item to the "studentList" unordered list.});: Ends the loop for iterating through students and the "displayStudents()" function.
+
+function resetForm() {: Defines a JavaScript function named "resetForm()" to reset the form.document.getElementById("studentForm").
+
+reset();: Resets the form with the "studentForm" ID, clearing the input fields.
+
+</script>: Closes the script element and ends the JavaScript code block.
+
+</body>: Closes the body section of the HTML document.
+
+</html>: Closes the HTML document.
